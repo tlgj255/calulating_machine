@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    int num[] = new int[4], maNum[] = new int[4], a = 0, num2 = 0, b = 0;
+    int num[] = new int[4],maNum[] = new int[4], a = 0, num2 = 0, b = 0,c = 0,d = 0;
     String s;
     Button n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, result, reset, division, plus, multiply, subtrack, bracket, back, n00, switch_;
     TextView show_result, show_n;
@@ -70,31 +70,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Toast over = Toast.makeText(MainActivity.this, "입력 가능한 9자를 초과했습니다.", Toast.LENGTH_SHORT);
         switch (v.getId()) {
+            case R.id.switch_:
+                num[a] = num[a]*-1;
+                break;
             case R.id.plus:
                 if (num[a] > 0 && b == 0) {
+                    d++;
                     b = 1;
-                    a++;
+                    a = 1;
                     s = "+";
                 }
                 break;
             case R.id.division:
                 if (num[a] > 0 && b == 0) {
+                    d++;
                     b = 2;
-                    a++;
+                    a = 1;
                     s = "%";
                 }
                 break;
             case R.id.subtrack:
                 if (num[a] > 0 && b == 0) {
+                    d++;
                     b = 3;
-                    a++;
+                    a = 1;
                     s = "-";
                 }
                 break;
             case R.id.multiply:
                 if (num[a] > 0 && b == 0) {
+                    d++;
                     b = 4;
-                    a++;
+                    a = 1;
                     s = "X";
                 }
         }
@@ -220,42 +227,115 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.reset:
+                break;
+            case R.id.result:
+                if(a == 1) {
+                    a = 1;
+                    num[1] = 0;
+                    maNum[1] = 0;
+                    if (b == 1) {
+                        num[0] = num[0] + num[1];
+                        c = num[0];
+                        if (c != 1000000000) {
+                            show_n.setText("" + num[0] + s);
+
+                            show_result.setText("=" + c);
+                        } else
+                            show_result.setText("=표기 할 수 없는 값입니다.");
+                    }
+                    if (b == 2) {
+                        num[0] = num[0] / num[1];
+                        c = num[0];
+                        if (c < 100000000 && c > -100000000) {
+                            show_n.setText("" + num[0] + s);
+
+                            show_result.setText("=" + c);
+                        } else {
+                            show_result.setText("=표기 할 수 없는 값입니다.");
+                        }
+                    }
+                    if (b == 3) {
+                        num[0] = num[0] - num[1];
+                        c = num[0];
+                        if (c < 100000000 && c > -100000000) {
+                            show_n.setText("" + num[0] + s);
+
+                            show_result.setText("=" + c);
+                        } else {
+                            show_result.setText("=표기 할 수 없는 값입니다.");
+                        }
+                    }
+                    if (b == 4) {
+                        num[0] = num[0] * num[1];
+                        c = num[0];
+                        if (c < 100000000 && c > -100000000) {
+                            show_n.setText("" + num[0] + s);
+                            show_result.setText("=" + c);
+                        } else {
+                            show_result.setText("=표기 할 수 없는 값입니다.");
+                        }
+                    }
+                }else
+                Toast.makeText(MainActivity.this, "숫자를 마저 입력해 주세요", Toast.LENGTH_SHORT).show();
+                break;
         }
         if (s == null)
             show_n.setText("" + num[0]);
         else if (s != null)
             show_n.setText("" + num[0] + s);
-        if (s != null && num[1] > 0)
+        if (s != null && num[1] != 0)
             show_n.setText("" + num[0] + s + num[1]);
-        if (a == 2) {
-            a = 1;
+        if (d >= 2) {
             if (b == 1) {
-                num[0] = num[0]+num[1];
-                show_n.setText("" + num[0]+s);
-                b = num[0];
-                show_result.setText(""+b);
-            }
-            if (b == 2) {
-                num[0] = num[0]/num[1];
-                show_n.setText("" + num[0]+s);
-                b = num[0];
-                show_result.setText(""+b);
-            }
-            if (b == 3) {
-                num[0] = num[0]-num[1];
-                show_n.setText("" + num[0]+s);
-                b = num[0];
-                show_result.setText(""+b);
-            }
-            if (b == 4) {
-                num[0] = num[0]*num[1];
-                show_n.setText("" + num[0]+s);
-                b = num[0];
-                show_result.setText(""+b);
+                if (num[0] + num[1]< 100000000 && num[0] + num[1]> -100000000) {
+                    show_n.setText("" + num[0] + s);
+                    num[0] = num[0] + num[1];
+                    c = num[0];
+                    a = 1;
+                    show_result.setText("=" + c);
+                } else {
+                    show_result.setText("=표기 할 수 없는 값입니다.");
+                }
+                if (b == 2) {
+
+                    if ( num[0] / num[1] < 100000000 && num[0] / num[1] > -100000000) {
+                        show_n.setText("" + num[0] + s);
+                        a = 1;
+                        num[0] = num[0] / num[1];
+                        c = num[0];
+                        show_result.setText("=" + c);
+                    } else {
+                        show_result.setText("=표기 할 수 없는 값입니다.");
+                    }
+                }
+                if (b == 3) {
+
+                    if (num[0] - num[1] < 100000000 && num[0] - num[1] > -100000000) {
+                        show_n.setText("" + num[0] + s);
+                        num[0] = num[0] - num[1];
+                        c = num[0];
+                        a = 1;
+                        show_result.setText("=" + c);
+                    } else {
+                        show_result.setText("=표기 할 수 없는 값입니다.");
+                    }
+                }
+                if (b == 4) {
+                    if (num[0] * num[1] < 100000000 && num[0] * num[1] > -1000000000) {
+                        num[0] = num[0] * num[1];
+                        c = num[0];
+                        show_n.setText("" + num[0] + s);
+                        a = 1;
+                        show_result.setText("=" + c);
+                    } else {
+                        show_result.setText("=표기 할 수 없는 값입니다.");
+                    }
+                }
             }
             num[1] = 0;
             maNum[1] = 0;
         }
+        Log.i("c",""+c);
         Log.i("num[" + a + "]값", "" + num[a]);
         Log.i("maNum[" + a + "]값", "" + maNum[a]);
     }
