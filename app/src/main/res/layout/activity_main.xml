@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tlqkf.calculating_machine.MainActivity">
-<Button
+    tools:context="com.example.tlqkf.calculating_machine.MainActivity"
+    >
+
+    <Button
     android:layout_width="80dp"
     android:layout_height="60dp"
     android:layout_alignParentBottom="true"
@@ -25,7 +27,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="175dp"
         android:layout_alignParentEnd="true"
-        android:text="+"
+        android:text="＋"
         android:textSize="20dp"
         android:id="@+id/plus"/>
     <Button
@@ -33,13 +35,13 @@
         android:layout_height="60dp"
         android:layout_marginTop="125dp"
         android:layout_alignParentEnd="true"
-        android:text="-"
+        android:text="－"
         android:textSize="20dp"
         android:id="@+id/subtrack"/>
     <Button
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:text=""
+        android:text="CE"
         android:textSize="20dp"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="75dp"
@@ -79,7 +81,7 @@
     <Button
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:text="X"
+        android:text="×"
         android:textSize="20dp"
         android:layout_marginLeft="480dp"
         android:layout_marginTop="75dp"
@@ -111,7 +113,7 @@
     <Button
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:text="%"
+        android:text="÷"
         android:textSize="20dp"
         android:layout_marginLeft="400dp"
         android:layout_marginTop="75dp"
@@ -164,23 +166,159 @@
         android:text="0"
         android:textSize="20dp"
         android:id="@+id/n0"/>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:text="1000x1000"
-    android:textSize="40dp"
-    android:gravity="right"
-    android:id="@+id/show_n"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="%"
+        android:textSize="20dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="75dp"
+        android:id="@+id/button" />
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="210dp"
+        android:text="tan"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="210dp"
+        android:text="1/x"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:text="y^x"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="210dp"
+        android:id="@+id/button4" />
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="210dp"
+        android:text="e"
+        android:textSize="20dp"/>
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="√"
+        android:textSize="20dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="75dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="110dp"
+        android:text="cos"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="110dp"
+        android:text="log"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:text="x^2"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="110dp"
+      />
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="110dp"
+        android:text="π"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:text="x!"
+        android:textSize="20dp"
+        android:layout_marginTop="75dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="125dp"
+        android:text="sin"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="175dp"
+        android:text="ln"
+        android:textSize="20dp"/>
+    <Button
+        android:textAllCaps="false"
+        android:text="e^x"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="225dp"
+        />
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:text="|x|"
+        android:textSize="20dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:textSize="25dp"
-        android:text="=100"
+        android:text=""
         android:gravity="right"
         android:textColor="#aa029010"
         android:id="@+id/show_result"
         android:layout_below="@+id/show_n"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:background="#70FFDA"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="20dp"
+        android:layout_height="253dp"
+        android:background="#00FFC0"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/button"
+        android:id="@+id/button2" />
+
+    <TextView
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=""
+        android:textSize="40dp"
+        android:gravity="right"
+        android:id="@+id/show_n"
+        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
