@@ -11,19 +11,16 @@ import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    int maNum[] = new int[2], a = 0, nu = 0, b = 0, d = 0;
-    double num[] = new double[2], c = 0,spNu[] = new double[2] ;
-    String s,special[] = new String[2];
-    Button n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, result, reset, division, plus, multiply, subtrack, bracket, back, n00, switch_,pie;
+    int maNum[] = new int[2], a = 0, nu = 0, b = 0, d = 0,num[] = new int[2], c = 0;
+    String s;
+    Button n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, result, reset, division, plus, multiply, subtrack, back, n00, switch_;
     TextView show_result, show_n;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        pie = (Button)findViewById(R.id.pie);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         n1 = (Button) findViewById(R.id.n1);
         n2 = (Button) findViewById(R.id.n2);
         n3 = (Button) findViewById(R.id.n3);
@@ -40,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plus = (Button) findViewById(R.id.plus);
         multiply = (Button) findViewById(R.id.multiply);
         subtrack = (Button) findViewById(R.id.subtrack);
-        bracket = (Button) findViewById(R.id.bracket);
         back = (Button) findViewById(R.id.back);
         n00 = (Button) findViewById(R.id.n00);
         switch_ = (Button) findViewById(R.id.switch_);
@@ -62,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plus.setOnClickListener(this);
         multiply.setOnClickListener(this);
         subtrack.setOnClickListener(this);
-        bracket.setOnClickListener(this);
         back.setOnClickListener(this);
         n00.setOnClickListener(this);
         switch_.setOnClickListener(this);
@@ -73,14 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Toast over = Toast.makeText(MainActivity.this, "입력 가능한 9자를 초과했습니다.", Toast.LENGTH_SHORT);
         switch (v.getId()) {
-            case R.id.pie:
-                if(num[a] == 0) {
-                    special[a] = "π";
-                    spNu[a] = 3.1415925636;
-                }else if(num[a] !=0){
-                spNu[a] = num[a] * 3.1415925636;
-                }
-                break;
             case R.id.switch_:
                 nu = 1;
                 num[a] = num[a] * -1;
@@ -457,7 +444,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             show_result.setText("=표기 할 수 없는 값입니다.");
                         }
                     }
-                    special = null;
                     b = 0;
                     num[1] = 0;
                     maNum[1] = 0;
@@ -470,29 +456,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(MainActivity.this, "숫자를 마저 입력해 주세요", Toast.LENGTH_SHORT).show();
                 break;
         }
-        if(special == null) {
             if (s == null)
-                show_n.setText("" + (int) num[a]);
-            else if (s != null)
-                show_n.setText("" + (int) num[0] + s);
+                show_n.setText("" +  num[a]);
+            if (s != null)
+                show_n.setText("" +  num[0] + s);
             if (s != null && num[1] != 0)
-                show_n.setText("" + (int) num[0] + s + (int) num[1]);
-        }else{
-            if(num[0]!=0)
-                show_n.setText(""+(int)num[0]+special[0]);
-            else if(num[0] != 0 && s !=null)
-                show_n.setText(""+(int)num[0]+special[0] + s);
-            else if(num[0] != 0 && s !=null && num[1] != 0)
-                show_n.setText(""+(int)num[0]+special[0] + s + num[1]);
-            else if(num[0] != 0 && s !=null && num[1] != 0 && special[1] !=null)
-                show_n.setText(""+(int)num[0]+special[0] + s + num[1]+special[1]);
-            if(num[0] == 0)
-                show_n.setText(special[0]);
-            else if(num[0] == 0 && s !=null)
-                show_n.setText(special[0] + s);
-            else if(num[0] == 0 && s !=null && num[1] != 0)
-                show_n.setText(special[0] + s + num[1]);
-        }
+                show_n.setText("" + num[0] + s + num[1]);
         Log.i("c", "" + c);
         Log.i("num[" + a + "]값", "" + num[a]);
         Log.i("maNum[" + a + "]값", "" + maNum[a]);
