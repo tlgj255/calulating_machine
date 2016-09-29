@@ -168,7 +168,8 @@
         android:layout_height="80dp"
     android:layout_marginTop="450dp"
         android:layout_alignParentRight="true"
-        android:text="뀨잉"/>
+        android:text="뀨잉"
+        android:id="@+id/ggyu"/>
     <TextView
         android:id="@+id/show_n"
         android:layout_width="match_parent"
