@@ -12,7 +12,7 @@ import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    int maNum/*margin number*/[] = new int[2], a = 0, nu = 0, b = 0, d = 0, num[] = new int[2], c = 0, ran, e;
+    int maNum/*margin number*/[] = new int[2], a = 0, nu = 0, b = 0, d = 0, num[] = new int[2], c = 0, ran, e,ggy;
     String s;
     Button result, reset, division, plus, multiply, subtrack, back, switch_, ggyu;
     TextView show_result, show_n;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     nu = 0;
                     if (b == 1) {
                         if (num[0] + num[1] < 100000000 && num[0] + num[1] > -100000000){
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] + num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     if (b == 2) {
                         if (num[0] / num[1] < 100000000 && num[0] / num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] / num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (b == 3) {
 
                         if (num[0] - num[1] < 100000000 && num[0] - num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] - num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     nu = 0;
                     if (b == 1) {
                         if (num[0] + num[1] < 100000000 && num[0] + num[1] > -100000000){
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] + num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     if (b == 2) {
                         if (num[0] / num[1] < 100000000 && num[0] / num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] / num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (b == 3) {
 
                         if (num[0] - num[1] < 100000000 && num[0] - num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] - num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     nu = 0;
                     if (b == 1) {
                         if (num[0] + num[1] < 100000000 && num[0] + num[1] > -100000000){
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] + num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     if (b == 2) {
                         if (num[0] / num[1] < 100000000 && num[0] / num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] / num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (b == 3) {
 
                         if (num[0] - num[1] < 100000000 && num[0] - num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] - num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     nu = 0;
                     if (b == 1) {
                         if (num[0] + num[1] < 100000000 && num[0] + num[1] > -100000000){
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] + num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -275,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     if (b == 2) {
                         if (num[0] / num[1] < 100000000 && num[0] / num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] / num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (b == 3) {
 
                         if (num[0] - num[1] < 100000000 && num[0] - num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] - num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -481,7 +481,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     s = null;
                     if (b == 1) {
                         if (num[0] + num[1] < 100000000 && num[0] + num[1] > -100000000){
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] + num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -490,7 +490,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     if (b == 2) {
                         if (num[0] / num[1] < 100000000 && num[0] / num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] / num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
@@ -500,7 +500,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (b == 3) {
 
                         if (num[0] - num[1] < 100000000 && num[0] - num[1] > -100000000) {
-                            num[0] = num[0] * num[1];
+                            num[0] = num[0] - num[1];
                             c = num[0];
                             show_result.setText("=" + c);
                         }
