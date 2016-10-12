@@ -12,7 +12,7 @@ import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    int maNum/*margin number*/[] = new int[2], a = 0, nu = 0, b = 0, d = 0, num[] = new int[2], c = 0, ran, e,ggy;
+    int maNum/*margin number*/[] = new int[2], a = 0, nu = 0, b = 0, d = 0, num[] = new int[2], c = 0, ran, e;
     String s;
     Button result, reset, division, plus, multiply, subtrack, back, switch_, ggyu;
     TextView show_result, show_n;
@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        ggyu = (Button) findViewById(R.id.ggyu);
         n[1] = (Button) findViewById(R.id.n1);
         n[2] = (Button) findViewById(R.id.n2);
         n[3] = (Button) findViewById(R.id.n3);
@@ -66,26 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         back.setOnClickListener(this);
         switch_.setOnClickListener(this);
         show_n.setOnClickListener(this);
-        ggyu.setOnClickListener(this);
-        g[0] = MediaPlayer.create(this, R.raw.finish006);//8 funny sound
-        g[1] = MediaPlayer.create(this, R.raw.finish007);
-        g[2] = MediaPlayer.create(this, R.raw.finish008);
-        g[3] = MediaPlayer.create(this, R.raw.finish009);
-        g[4] = MediaPlayer.create(this, R.raw.finish010);
-        g[5] = MediaPlayer.create(this, R.raw.finish011);
-        g[6] = MediaPlayer.create(this, R.raw.finish012);
-        g[7] = MediaPlayer.create(this, R.raw.finish013);
-    }
+}
 
     @Override
     public void onClick(View v) {
         Toast over = Toast.makeText(MainActivity.this, "입력 가능한 9자를 초과했습니다.", Toast.LENGTH_SHORT);
         switch (v.getId()) {
-            case R.id.ggyu:
-                ran = (int) (Math.random() * 7);
-                //start random funny sound
-                g[ran].start();
-                break;
             case R.id.switch_:
                 if (nu == 0) {
                     nu = 1;
@@ -143,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     a = 1;
 
                 }
-                if (num[a] > 0 && b == 0) {
+                if (num[a] != 0 && b == 0) {
                     nu = 0;
                     d++;
                     b = 1;
@@ -198,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     b = 2;
                     s = "÷";
                 }
-                if (num[a] > 0 && b == 0) {
+                if (num[a] != 0 && b == 0) {
                     nu = 0;
                     d++;
                     b = 2;
@@ -253,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     show_n.setText("" + num[0] + s);
                     a = 1;
                 }
-                if (num[a] > 0 && b == 0) {
+                if (num[a] != 0 && b == 0) {
                     nu = 0;
                     d++;
                     b = 3;
@@ -308,7 +293,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     show_n.setText("" + num[0] + s);
                     a = 1;
                 }
-                if (num[a] > 0 && b == 0) {
+                if (num[a] != 0 && b == 0) {
                     nu = 0;
                     d++;
                     b = 4;
@@ -472,6 +457,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.reset:
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
+                this.finish();
                 overridePendingTransition(R.anim.go, R.anim.gone);
                 break;
             case R.id.result:
@@ -536,6 +522,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 show_n.setText("" + num[a]);
             if (s != null)
                 show_n.setText("" + num[0] + s);
+
             if (s != null && num[1] != 0)
                 show_n.setText("" + num[0] + s + num[1]);
         }

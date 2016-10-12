@@ -139,14 +139,7 @@
         android:textSize="20dp"
         android:layout_alignParentRight="true"
         android:layout_marginTop="365dp"/>
-    <Button
-        android:id="@+id/result"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="="
-        android:textSize="20dp" />
+
     <Button
         android:id="@+id/multiply"
         android:layout_width="80dp"
@@ -163,13 +156,6 @@
         android:text="+/-"
         android:textSize="20dp"
         android:layout_marginLeft="185dp"/>
-    <Button
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-    android:layout_marginTop="450dp"
-        android:layout_alignParentRight="true"
-        android:text="뀨잉"
-        android:id="@+id/ggyu"/>
     <TextView
         android:id="@+id/show_n"
         android:layout_width="match_parent"
@@ -190,5 +176,14 @@
         android:text=""
         android:textColor="#aa029010"
         android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/result"
+        android:layout_width="80dp"
+        android:layout_height="165dp"
+        android:text="="
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
